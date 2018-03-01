@@ -1,6 +1,7 @@
 %% 双圆阵的自然指向性 
 %利用Sensor Array Analyzer工具生成代码，修改参数
 %double circle array analyze 
+%波束宽度是指入射方位角截面的-3dB开胶范围
 clear;close all;
 R1=0.025;
 R2=0.05;
@@ -61,7 +62,7 @@ title_str = [title_str sprintf('\n') num2str(Fval) ' ' Fletter 'Hz '  ...
     ' steered at ' num2str(SA(1)) '°AZ ' num2str(SA(2)) '°EL'];
 set(title, 'String', title_str);
 
-%% 2D 方位角角切面
+%% 2D 方位角角切面：这部分多余
 cutAngle = SA(2);%在该俯仰角方向的切面
 %Assign number of phase shift quantization bits
 PSB = 0;
@@ -118,7 +119,7 @@ for k=2:length(pat_a)-1%round((length(pat_a)+1)/4):round((3*length(pat_a)+3)/4) 
     end
 end
 
-plot(az(pos_az),pat_a(pos_az),'or')
+% plot(az(pos_az),pat_a(pos_az),'or') %由于方位角开角无意义，因此无需作图
 if length(pos_az)==4
     wid_AZ=(az(pos_az(3))+az(pos_az(4)))/2-(az(pos_az(1))+az(pos_az(2)))/2;%-3dB主瓣宽度
 else
