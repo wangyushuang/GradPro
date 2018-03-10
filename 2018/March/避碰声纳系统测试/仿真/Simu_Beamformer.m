@@ -9,8 +9,8 @@ close all;
  Rc2=0.0115;%内径
  N1=6;%外圈阵元个数
  N2=6;%内圈阵元个数
- xEle=[Rc1*cos([0:N1-1]*pi/3),Rc2*cos([0:N2-1]*pi/3)]';%阵元x坐标
- yEle=[Rc1*sin([0:N1-1]*pi/3),Rc2*sin([0:N2-1]*pi/3)]';%阵元y坐标
+ xEle=[Rc1*cos(-[0:N1-1]*pi/3),Rc2*cos(-[0:N2-1]*pi/3)]';%阵元x坐标
+ yEle=[Rc1*sin(-[0:N1-1]*pi/3),Rc2*sin(-[0:N2-1]*pi/3)]';%阵元y坐标
  
  phy0=10*pi/180;%信号入射方位角
  theta0=100*pi/180;%信号入射俯仰角
